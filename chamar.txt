@@ -1,0 +1,13 @@
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:3000/clientes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nome, telefone, email })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+  }
